@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 
 from person.create import Create
 
@@ -71,20 +72,31 @@ style = {
         'bg': '#f44336',
     }
 }
-Label(master, cnf=style['lbl_name']).grid(row=0, column=0, sticky='w')
-Entry(master, cnf=style['en_name']).grid(row=1, column=0)
 
-Label(master, cnf=style['lbl_family']).grid(row=2, column=0, sticky='w')
-Entry(master, cnf=style['en_family']).grid(row=3, column=0)
 
-Label(master, cnf=style['lbl_age']).grid(row=4, column=0, sticky='w')
-Entry(master, cnf=style['en_age']).grid(row=5, column=0)
+root_tabs = ttk.Notebook(master)
 
-Label(master, cnf=style['lbl_phone']).grid(row=6, column=0, sticky='w')
-Entry(master, cnf=style['en_phone']).grid(row=7, column=0)
+create_tab = ttk.Frame(root_tabs)
+root_tabs.add(create_tab, text='create')
 
-Button(master, cnf=style['btn_create']).grid(row=8, column=0)
-Button(master, cnf=style['btn_exit']).grid(row=9, column=0)
+select_tab = ttk.Frame(root_tabs)
+root_tabs.add(select_tab, text='select')
+root_tabs.pack()
+
+Label(create_tab, cnf=style['lbl_name']).grid(row=0, column=0, sticky='w')
+Entry(create_tab, cnf=style['en_name']).grid(row=1, column=0)
+
+Label(create_tab, cnf=style['lbl_family']).grid(row=2, column=0, sticky='w')
+Entry(create_tab, cnf=style['en_family']).grid(row=3, column=0)
+
+Label(create_tab, cnf=style['lbl_age']).grid(row=4, column=0, sticky='w')
+Entry(create_tab, cnf=style['en_age']).grid(row=5, column=0)
+
+Label(create_tab, cnf=style['lbl_phone']).grid(row=6, column=0, sticky='w')
+Entry(create_tab, cnf=style['en_phone']).grid(row=7, column=0)
+
+Button(create_tab, cnf=style['btn_create']).grid(row=8, column=0)
+Button(create_tab, cnf=style['btn_exit']).grid(row=9, column=0)
 
 
 master.mainloop()
