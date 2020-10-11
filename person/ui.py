@@ -73,7 +73,6 @@ style = {
     }
 }
 
-
 root_tabs = ttk.Notebook(master)
 
 create_tab = ttk.Frame(root_tabs)
@@ -81,6 +80,13 @@ root_tabs.add(create_tab, text='create')
 
 select_tab = ttk.Frame(root_tabs)
 root_tabs.add(select_tab, text='select')
+
+select_tab = ttk.Frame(root_tabs)
+root_tabs.add(select_tab, text='delete')
+
+select_tab = ttk.Frame(root_tabs)
+root_tabs.add(select_tab, text='update')
+
 root_tabs.pack()
 
 Label(create_tab, cnf=style['lbl_name']).grid(row=0, column=0, sticky='w')
@@ -97,6 +103,8 @@ Entry(create_tab, cnf=style['en_phone']).grid(row=7, column=0)
 
 Button(create_tab, cnf=style['btn_create']).grid(row=8, column=0)
 Button(create_tab, cnf=style['btn_exit']).grid(row=9, column=0)
+
+
 
 
 master.mainloop()
