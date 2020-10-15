@@ -10,7 +10,7 @@ class Create():
     def create_data(self):
         try:
             conn, cursor = Database().my_db()
-            query = "INSERT INTO user(name, family, age, phone) VALUES(%s, %s, %s, %s)"
+            query = "INSERT INTO user(name,family,age,phone) VALUES (%s, %s, %s, %s)"
             data = (self.name, self.family, self.age, self.phone)
             cursor.execute(query, data)
             conn.commit()

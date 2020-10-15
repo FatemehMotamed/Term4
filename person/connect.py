@@ -8,7 +8,7 @@ class Database():
                 'localhost',
                 'poulstar',
                 'poulstar',
-                'Shop',
+                'education',
             )
             cursor = conn.cursor()
             print("connected :)")
